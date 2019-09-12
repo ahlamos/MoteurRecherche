@@ -1,0 +1,17 @@
+<form class = "form1">
+  <div *ngIf="recievedData" style="overflow-y: auto;height:100%">
+  <h1>{{ 'DETAILS.TITLE' | translate }}: </h1><p>{{recievedData.title}}</p>
+  <h1>{{ 'DETAILS.AUTH' | translate }}: </h1><p>{{recievedData.author}}</p>
+  <h1>{{ 'DETAILS.DES' | translate }}: </h1><p>{{recievedData.description}}</p>
+  <h1>{{ 'DETAILS.CAT' | translate }}: </h1><p>{{recievedData.categorie}}</p>
+  <h1>{{ 'DETAILS.EDIT' | translate }}: </h1><p>{{recievedData.editeur}}</p>
+  <a *ngIf="recievedData.lien" target="_blank" href="{{ recievedData.lien }}"><p>{{recievedData.lien}}</p></a>
+</div>
+</form>
+<style>
+  .form1{
+    overflow:auto;
+    height:500px;
+  }
+
+</style>

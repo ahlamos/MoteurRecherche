@@ -1,0 +1,24 @@
+{
+  "HOME": {
+    "TITLE":"Recherche" ,
+    "SELECT":"Choisir langue",
+    "BUTTON": "Rechercher",
+    "KEY":"Mot clef"
+  },
+  "RESULT": {
+    "BUTTON":"Retour",
+    "FILTER": "'Filtrer les résultats'",
+    "TITLE":"Résultats",
+    "CHAR": "Chargement",
+    "ERROR": "Erreur",
+    "NOTHING":"Aucun résultat",
+    "DE": "De"
+  },
+  "DETAILS": {
+     "TITLE":"Titre",
+      "AUTH":"Autheur",
+      "DES":"Description",
+       "CAT":"Catégorie",
+       "EDIT":"Editeur"
+  }
+}

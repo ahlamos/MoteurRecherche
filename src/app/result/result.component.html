@@ -1,0 +1,71 @@
+
+<button mat-button  class="float-left" style="margin-top: 1rem" [routerLink]="['/search']"
+        style="padding:5px;margin:5px;margin-left:5px;float:left">
+  <mat-icon>arrow_back_ios</mat-icon>
+  {{ 'RESULT.BUTTON' | translate }}
+
+</button>
+<form class = "form1" style="margin-left:20px;float:left;margin-top:10px">
+
+<ng-multiselect-dropdown
+  [placeholder]="''"
+  [class]="'filter-select'"
+  [data]="filter"
+  [(ngModel)]="selectedItems"
+  [settings]="dropdownSettingsProduct"
+  (onSelect)="onItemSelect($event)"
+  (onSelectAll)="onSelectAll($event)"
+  (onDeSelect)="onItemDeSelect($event)"
+>
+</ng-multiselect-dropdown>
+</form>
+
+<style>
+  .form1, .filter-select, .filter-select * {
+    width:200px;
+  }
+
+</style>
+<h1 style="clear:both">
+  {{ 'RESULT.TITLE' | translate }}
+</h1>
+<div *ngIf="isInProgress">
+  {{ 'RESULT.CHAR' | translate }}
+</div>
+<div *ngIf="!isInProgress">
+  <div *ngIf="isError">
+    {{ 'RESULT.ERROR' | translate }}
+  </div>
+  <div *ngIf="!books">
+    <h4>{{ 'RESULT.NOTHING' | translate }}</h4>
+  </div>
+  <div class="row text-left" *ngFor="let book of books; let i = index"
+       style = "display:block;width:30%;float:left;border:1px solid black;
+       padding:10px;height:400px;overflow-y: hidden;margin:5px;">
+    <div class="column">
+      <div class="row">
+        <a href ="javascript:void(0)" (click)="openBookDetailsDialog(i)">{{book.volumeInfo.title}}</a>
+      </div>
+      <div class="row">
+        <span class="column">{{ 'RESULT.DE' | translate }}: {{book.volumeInfo.authors}}</span>
+      </div>
+      <div class="row">
+        <div class="column">
+          <span *ngIf="book.volumeInfo.pageCount">{{book.volumeInfo.pageCount}} pages</span>
+        </div>
+      </div>
+      <div class="row">
+        <img class="column column-20" style="height:200px"
+             [src]="book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : '../assets/dummyBook.jpg'"
+             alt="bookImage">
+        <div class="column">
+
+          <p>
+            {{book.volumeInfo.description}}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

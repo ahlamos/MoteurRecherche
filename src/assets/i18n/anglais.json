@@ -1,0 +1,24 @@
+{
+  "HOME": {
+    "TITLE":"Search" ,
+    "SELECT":"Choice langage",
+    "BUTTON": "Search",
+    "KEY": "Keyword"
+  },
+  "RESULT": {
+    "BUTTON":"Back",
+    "FILTER": "Filter results",
+    "TITLE":"Results",
+    "CHAR": "Loading",
+    "ERROR": "Error",
+    "NOTHING":"No result",
+    "DE": "Of"
+  },
+  "DETAILS": {
+    "TITLE":"Title",
+    "AUTH":"Author",
+    "DES":"Description",
+    "CAT":"Dbject",
+    "EDIT":"publisher"
+  }
+}

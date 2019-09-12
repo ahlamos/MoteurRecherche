@@ -1,0 +1,26 @@
+<h1>
+  {{ 'HOME.TITLE' | translate }}
+
+</h1>
+<label>
+  {{ 'HOME.SELECT' | translate }}
+  <select #langSelect (change)="translate.use(langSelect.value)">
+    <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{
+      lang }}</option>
+  </select>
+</label>
+
+
+<form #searchForm="ngForm" (submit)="search()"
+      style = "display:block;width:700px; margin-right: auto;margin-left: auto;padding-top:200px">
+
+    <input id="searchValue" name="author" type="text" placeholder="{{ 'HOME.BUTTON' | translate }}" [(ngModel)]="searchValue" required
+           style = "margin:5px;width:80%;padding:10px;" >
+
+  <button mat-button type="submit" [disabled]="!searchForm.form.valid" style="width:15%;padding:10px;">
+    <mat-icon>search</mat-icon>
+    {{ 'HOME.BUTTON' | translate }}
+
+  </button>
+</form>
+
